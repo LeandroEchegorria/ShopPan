@@ -1,38 +1,38 @@
-import IoniIcons from "@expo/vector-icons/Ionicons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import IoniIcons from '@expo/vector-icons/Ionicons'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
-import { colors } from "../constants/colors";
-import CartNavigator from "./cart";
-import OrdersNavigator from "./orders";
-import ShopNavigator from "./shop";
+import { colors } from '../constants/colors'
+import CartNavigator from './cart'
+import OrdersNavigator from './orders'
+import ShopNavigator from './shop'
 
 const styles = StyleSheet.create({
   tabBarIcon: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   tabBarText: {
-    fontFamily: "Lato-Regular",
+    fontFamily: 'Lato-Regular',
     fontSize: 14,
-    color: colors.text,
+    color: colors.text
   },
   tabBarTextFocused: {
-    fontFamily: "Lato-Bold",
+    fontFamily: 'Lato-Bold',
     fontSize: 14,
-    color: colors.text,
-  },
-});
+    color: colors.text
+  }
+})
 
-const BottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator()
 
 const Tabs = () => {
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
       screenOptions={{
-        headerShown: false,
+        headerShown: false
       }}>
       <BottomTab.Screen
         name="ShopTab"
@@ -41,14 +41,14 @@ const Tabs = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
               <IoniIcons
-                name={focused ? "home" : "home-outline"}
+                name={focused ? 'home' : 'home-outline'}
                 size={20}
                 color={colors.primary}
               />
               <Text style={focused ? styles.tabBarTextFocused : styles.tabBarText}>Shop</Text>
             </View>
           ),
-          tabBarShowLabel: false,
+          tabBarShowLabel: false
         }}
       />
       <BottomTab.Screen
@@ -58,14 +58,14 @@ const Tabs = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
               <IoniIcons
-                name={focused ? "cart" : "cart-outline"}
+                name={focused ? 'cart' : 'cart-outline'}
                 size={20}
                 color={colors.primary}
               />
               <Text style={focused ? styles.tabBarTextFocused : styles.tabBarText}>Cart</Text>
             </View>
           ),
-          tabBarShowLabel: false,
+          tabBarShowLabel: false
         }}
       />
       <BottomTab.Screen
@@ -75,18 +75,18 @@ const Tabs = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
               <IoniIcons
-                name={focused ? "file-tray-full" : "file-tray-full-outline"}
+                name={focused ? 'file-tray-full' : 'file-tray-full-outline'}
                 size={20}
                 color={colors.primary}
               />
               <Text style={focused ? styles.tabBarTextFocused : styles.tabBarText}>Orders</Text>
             </View>
           ),
-          tabBarShowLabel: false,
+          tabBarShowLabel: false
         }}
       />
     </BottomTab.Navigator>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs

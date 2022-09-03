@@ -1,9 +1,10 @@
-import IoniIcons from "@expo/vector-icons/Ionicons";
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+/* eslint-disable react/prop-types */
+import IoniIcons from '@expo/vector-icons/Ionicons'
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
 
-import { colors } from "../../constants/colors";
-import { styles } from "./styles";
+import { colors } from '../../constants/colors'
+import { styles } from './styles'
 
 const CartItem = ({ item, onDelete }) => {
   return (
@@ -21,7 +22,7 @@ const CartItem = ({ item, onDelete }) => {
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default CartItem;
+export default CartItem

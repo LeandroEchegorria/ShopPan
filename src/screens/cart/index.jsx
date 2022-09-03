@@ -1,25 +1,25 @@
-import React from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react'
+import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { CartItem } from "../../components";
-import { confirmCart, removeItem } from "../../store/actions/cart.actions";
-import { styles } from "./styles";
+import { CartItem } from '../../components'
+import { confirmCart, removeItem } from '../../store/actions/cart.actions'
+import { styles } from './styles'
 
 const Cart = () => {
-  const dispatch = useDispatch();
-  const items = useSelector((state) => state.cart.items);
-  const total = useSelector((state) => state.cart.total);
-  const disabledButton = total === 0;
+  const dispatch = useDispatch()
+  const items = useSelector((state) => state.cart.items)
+  const total = useSelector((state) => state.cart.total)
+  const disabledButton = total === 0
   const onHandleDelete = (id) => {
-    dispatch(removeItem(id));
-  };
+    dispatch(removeItem(id))
+  }
 
   const onHandleConfirm = () => {
-    dispatch(confirmCart(items, total));
-  };
-  const keyExtractor = (item) => item.id.toString();
-  const renderItem = ({ item }) => <CartItem item={item} onDelete={onHandleDelete} />;
+    dispatch(confirmCart(items, total))
+  }
+  const keyExtractor = (item) => item.id.toString()
+  const renderItem = ({ item }) => <CartItem item={item} onDelete={onHandleDelete} />
 
   return (
     <View style={styles.container}>
@@ -39,7 +39,7 @@ const Cart = () => {
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

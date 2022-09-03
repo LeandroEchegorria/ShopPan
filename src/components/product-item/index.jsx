@@ -1,7 +1,8 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+/* eslint-disable react/prop-types */
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
 
-import { styles } from "./styles";
+import { styles } from './styles'
 
 const ProductItem = ({ item, onSelected }) => {
   return (
@@ -11,7 +12,7 @@ const ProductItem = ({ item, onSelected }) => {
         onPress={() => onSelected(item)}
       >
         <View>
-          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.name}>{ item.name }</Text>
         </View>
         <View>
           <Text style={styles.price}>{item.price.toFixed(2)}</Text>
@@ -19,7 +20,7 @@ const ProductItem = ({ item, onSelected }) => {
         </View>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
-export default ProductItem;
+export default ProductItem
